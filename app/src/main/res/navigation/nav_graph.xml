@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/galleryFragment">
+
+    <fragment
+        android:id="@+id/galleryFragment"
+        android:name="com.ass.imagegallery.ui.gallery.GalleryFragment"
+        android:label="" >
+        <action
+            android:id="@+id/action_galleryFragment_to_detailsFragment"
+            app:destination="@id/detailsFragment" />
+    </fragment>
+    <dialog
+        android:id="@+id/detailsFragment"
+        android:name="com.ass.imagegallery.ui.details.DetailsFragment"
+        android:label=""
+        tools:layout="@layout/fragment_details" >
+        <argument
+            android:name="image"
+            app:argType="com.ass.imagegallery.data.GalleryImage" />
+    </dialog>
+    <fragment
+        android:id="@+id/noInternetFragment"
+        android:name="com.ass.imagegallery.ui.nointernet.NoInternetFragment"
+        android:label=""
+        tools:layout="@layout/fragment_no_internet" />
+    <action android:id="@+id/action_global_noInternetFragment" app:destination="@id/noInternetFragment"/>
+</navigation>
